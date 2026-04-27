@@ -1,0 +1,9 @@
+$dir = Read-Host "Enter directory path"
+
+if (!(Test-Path $dir -PathType Container)) {
+    Write-Host "Error: Directory does not exist."
+    exit
+}
+
+Write-Host "Files inside $dir :"
+Get-ChildItem $dir
